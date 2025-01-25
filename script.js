@@ -1,3 +1,4 @@
+
 // Fetch the JSON data
 fetch('data.json')
 .then(response => {
@@ -10,6 +11,16 @@ fetch('data.json')
 
 .then(data => {
 
+  var elem = document.getElementsByTagName("BODY")[0];
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
   
   $(document).ready(function(){
 
@@ -27,7 +38,6 @@ fetch('data.json')
         d3.select("#mainContainer").append("button").text(x.name).attr("class", "button drink-buttons").attr("id", x.name);
       }
     })
-    // d3.select("#mainContainer").append("div").attr("id", "cardTitle").text(data[0].drinks[0].name);
 
 
     d3.select("body").append("div").attr("id", "bottomNav");
@@ -35,16 +45,24 @@ fetch('data.json')
   
 
     $('body').on('click','button', function(){
+      openFullscreen();
       $("#mainContainer").empty();
 
       // console.log(this.id);
 
+      if(this.id === "searchDrinks"){
+          d3.select("#mainContainer").append("div").attr("id", "searchDiv");
+          d3.select("#searchDiv").append("input").attr("id", "searchInput").attr("placeholder", "search...");
+          d3.select("#searchDiv").append("button").attr("id", "clearButton").text("Clear");
+        }
+
       list.map(x => {
-        
+
         if(this.id === x.section){
           d3.select("#mainContainer").append("button").text(x.name).attr("class", "button drink-buttons").attr("id", x.name);
         }
 
+        
 
         if(this.id === x.name){
           console.log(x.name);
