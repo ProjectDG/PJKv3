@@ -63,7 +63,7 @@
                 "garnish" : ["Lime"],
                 "section" : "searchDrinks",
                 "photo" : "cadillac",
-                "instructions" : null
+                "instructions" : ["Pour Into Shaker", "Add Ice & Shake Vigorously" ,"Strain Over Fresh Ice", "Garnish With Lime"]
             }
         ],
 

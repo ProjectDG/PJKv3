@@ -93,21 +93,24 @@ function openFullscreen() {
           // Recipe Section Div
           d3.select("#drinkInfo").append("div").attr("class", "info-divs").attr("id", "drinkRecipeDiv");
 
-          d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-title-div").attr("id", "glass");
+          d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-div").attr("id", "glassTitle");
+          d3.select("#glassTitle").append("div").attr("class", "recipe-title-div").attr("id", "glass");
           d3.select("#glass").append("p").attr("class", "recipe-title").text("Glass: ");
           d3.select("#glass").append("div").attr("class", "drink-recipe").attr("id", "glassRecipe");
           d3.select("#glassRecipe").append("p").attr("class", "recipe").text(x.glass);
 
           if(x.rim !== null){
-            d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-title-div").attr("id", "rim");
-            d3.select("#rim").append("p").attr("class", "recipe-title").text("Rim: ");
+            d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-div").attr("id", "rimTitle");
+            d3.select("#rimTitle").append("div").attr("class", "recipe-title-div").attr("id", "rim");
+            d3.select("#rim").append("p").attr("class", "recipe-title").text("Rim:");
             d3.select("#rim").append("div").attr("class", "drink-recipe").attr("id", "rimRecipe");
             d3.select("#rimRecipe").append("p").attr("class", "recipe").text(x.rim);
           }
 
           if(x.liquor !== null){
-            d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-title-div").attr("id", "liquor");
-            d3.select("#liquor").append("p").attr("class", "recipe-title").text("Liquor: ");
+            d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-div").attr("id", "liquorTitle");
+            d3.select("#liquorTitle").append("div").attr("class", "recipe-title-div").attr("id", "liquor");
+            d3.select("#liquor").append("p").attr("class", "recipe-title").text("Liquor:");
             d3.select("#liquor").append("div").attr("class", "drink-recipe").attr("id", "liquorRecipe");
 
 
@@ -119,8 +122,9 @@ function openFullscreen() {
           }
 
           if(x.liqeuer !== null){
-            d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-title-div").attr("id", "liqeuer");
-            d3.select("#liqeuer").append("p").attr("class", "recipe-title").text("Liqeuer: ");
+            d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-div").attr("id", "liqeuerTitle");
+            d3.select("#liqeuerTitle").append("div").attr("class", "recipe-title-div").attr("id", "liqeuer");
+            d3.select("#liqeuer").append("p").attr("class", "recipe-title").text("Liqeuer:");
             d3.select("#liqeuer").append("div").attr("class", "drink-recipe").attr("id", "liqeuerRecipe");
 
 
@@ -132,7 +136,8 @@ function openFullscreen() {
           }
 
           if(x.mixers !== null){
-            d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-title-div").attr("id", "mixers");
+            d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-div").attr("id", "mixersTitle");
+            d3.select("#mixersTitle").append("div").attr("class", "recipe-title-div").attr("id", "mixers");
             d3.select("#mixers").append("p").attr("class", "recipe-title").text("Mixers: ");
             d3.select("#mixers").append("div").attr("class", "drink-recipe").attr("id", "mixersRecipe");
 
@@ -145,7 +150,8 @@ function openFullscreen() {
           }
 
           if(x.garnish !== null){
-            d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-title-div").attr("id", "garnish");
+            d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-div").attr("id", "garnishTitle");
+            d3.select("#garnishTitle").append("div").attr("class", "recipe-title-div").attr("id", "garnish");
             d3.select("#garnish").append("p").attr("class", "recipe-title").text("Garnish: ");
             d3.select("#garnish").append("div").attr("class", "drink-recipe").attr("id", "garnishRecipe");
 
