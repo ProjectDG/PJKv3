@@ -32,8 +32,13 @@ function openFullscreen() {
     d3.select("body").append("div").attr("id", "mainContainer");
 
     let list = data[0].drinks;
+    // console.log(list);
+
+    list.sort((a, b) => a.name.localeCompare(b.name));
 
     list.map(x => {
+      // console.log(x);
+
       if(x.section === "cocktails"){
         d3.select("#mainContainer").append("button").text(x.name).attr("class", "button drink-buttons").attr("id", x.name);
       }
@@ -44,29 +49,46 @@ function openFullscreen() {
     d3.select("#bottomNav").append("button").text("Search Drinks").attr("class", "button nav-buttons").attr("id", "searchDrinks");
   
 
-    $('body').on('click','button', function(){
+    $('body').on('click', '.button', function(){
+      if(this.id === "clearButton"){
+        return;
+      }
       openFullscreen();
       $("#mainContainer").empty();
 
       // console.log(this.id);
 
+      if(this.id === "clearButton"){
+        return;
+      }
+      
+
       if(this.id === "searchDrinks"){
           d3.select("#mainContainer").append("div").attr("id", "searchDiv");
           d3.select("#searchDiv").append("input").attr("id", "searchInput").attr("placeholder", "search...");
           d3.select("#searchDiv").append("button").attr("id", "clearButton").text("Clear");
+          d3.select("#mainContainer").append("div").attr("id", "searchListDiv");
         }
 
       list.map(x => {
 
-        if(this.id === x.section){
-          d3.select("#mainContainer").append("button").text(x.name).attr("class", "button drink-buttons").attr("id", x.name);
+
+        if(this.id !== "searchDrinks"){
+          if(this.id === x.section){
+            d3.select("#mainContainer").append("button").text(x.name).attr("class", "button drink-buttons").attr("id", x.name);
+          }
+        } else{
+          if(this.id === "searchDrinks" && x.section === "searchDrinks"){
+            d3.select("#searchListDiv").append("button").text(x.name).attr("class", "button drink-buttons").attr("id", x.name);
+          }
         }
 
+   
         
 
         if(this.id === x.name){
-          console.log(x.name);
-          console.log(x.photo);
+          // console.log(x.name);
+          // console.log(x.photo);
           
           // Main Container
           d3.select("#mainContainer").append("div").attr("id", "drinkInfoContainer");
@@ -87,7 +109,7 @@ function openFullscreen() {
             d3.select("#drinkPhoto").append("img").attr("class", "drink-photo").attr("src", "./images/" + x.photo + ".png")
           } else{
             // d3.select("#drinkPhoto").append("img").attr("class", "drink-photo").attr("src", "./images/noPhoto.png").style("max-width", "40%")
-            d3.select("#drinkPhoto").append("p").text("Please Upload Photo").style("color", "antiquewhite").style("font-size", "3vh")
+            d3.select("#drinkPhoto").append("p").text("Please Upload Photo").style("color", "antiquewhite").style("font-size", "3vh").style("margin","2%");
           }
 
           // Recipe Section Div
@@ -105,6 +127,20 @@ function openFullscreen() {
             d3.select("#rim").append("p").attr("class", "recipe-title").text("Rim:");
             d3.select("#rim").append("div").attr("class", "drink-recipe").attr("id", "rimRecipe");
             d3.select("#rimRecipe").append("p").attr("class", "recipe").text(x.rim);
+          }
+
+          if(x.wine !== null){
+            d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-div").attr("id", "wineTitle");
+            d3.select("#wineTitle").append("div").attr("class", "recipe-title-div").attr("id", "wine");
+            d3.select("#wine").append("p").attr("class", "recipe-title").text("Wine:");
+            d3.select("#wine").append("div").attr("class", "drink-recipe").attr("id", "wineRecipe");
+
+
+            let wine = x.wine;
+            console.log(wine);
+            wine.map(l => {
+              d3.select("#wineRecipe").append("p").attr("class", "recipe").text(l);
+            })
           }
 
           if(x.liquor !== null){
@@ -132,6 +168,20 @@ function openFullscreen() {
             console.log(liqeuers);
             liqeuers.map(l => {
               d3.select("#liqeuerRecipe").append("p").attr("class", "recipe").text(l);
+            })
+          }
+
+          if(x.vermouth !== null){
+            d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-div").attr("id", "vermouthTitle");
+            d3.select("#vermouthTitle").append("div").attr("class", "recipe-title-div").attr("id", "vermouth");
+            d3.select("#vermouth").append("p").attr("class", "recipe-title").text("Vermouth:");
+            d3.select("#vermouth").append("div").attr("class", "drink-recipe").attr("id", "vermouthRecipe");
+
+
+            let vermouth = x.vermouth;
+            console.log(vermouth);
+            vermouth.map(l => {
+              d3.select("#vermouthRecipe").append("p").attr("class", "recipe").text(l);
             })
           }
 
@@ -181,12 +231,64 @@ function openFullscreen() {
 
       })
 
+    
+    }); // End of Button Click
 
-
+    
+    /* Search Button */
+    document.addEventListener("input", (e) => {
+      let value = e.target.value;
+  
+      if (value && value.trim().length > 0) {
+          value = value.trim().toLowerCase().replace(/[^\w\s]/gi, ""); // Remove punctuation
+  
+          $("#searchListDiv").empty(); // Clear the current list
+  
+          // Filter and display drinks that match the sanitized search query
+          list.filter(x => x.name.toLowerCase().replace(/[^\w\s]/gi, "").includes(value))
+              .forEach(x => {
+                  d3.select("#searchListDiv")
+                      .append("button")
+                      .text(x.name)
+                      .attr("class", "button drink-buttons")
+                      .attr("id", x.name);
+              });
+  
+      } else {
+          // If the input is empty, repopulate with all drinks
+          $("#searchListDiv").empty();
+          list.map(x => {
+              if (x.section === "searchDrinks") {
+                  d3.select("#searchListDiv")
+                      .append("button")
+                      .text(x.name)
+                      .attr("class", "button drink-buttons")
+                      .attr("id", x.name);
+              }
+          });
+      }
     });
+  
+  
 
 
 
+    
+    $('body').on('click', '#clearButton', function(){
+
+      $("#searchInput").val("");
+      $("#searchListDiv").empty();
+
+      list.map(x => {
+        if(x.section === "searchDrinks"){
+          d3.select("#searchListDiv").append("button").text(x.name).attr("class", "button drink-buttons").attr("id", x.name);
+        }
+      });
+
+
+    });  // End of Clear Button
+
+    
 
 
 

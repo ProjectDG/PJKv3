@@ -6,11 +6,13 @@
                 "name" : "Call Me 'Koko'",
                 "glass" : "Rocks Glass",
                 "rim" : null,
+                "wine" : null,
                 "liquor" : [
                     "Rivi Gin - 1.5 oz,",
                     "Los Vecinos Mezcal - .5 oz"
                 ],
                 "liqeuer" : null,
+                "vermouth" : null,
                 "mixers" : [
                     "Lychee Syrup - .5 oz,",
                     "Lemon Juice - .75 oz,",
@@ -35,27 +37,106 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {
+                "name" : "After Hours",
+                "glass" : "Martini Glass",
+                "rim" : null,
+                "wine" : null,
+                "liquor" : [
+                    "St. George (Botanivore) - 2 oz,",
+                    "St. George (Citrus) - 1 oz"
+                ],
+                "liqeuer" : null,
+                "vermouth" : ["Lillet Blanc - 1 oz"],
+                "mixers" : null,
+                "garnish" : ["Orange Peel"],
+                "section" : "originals",
+                "photo" : null,
+                "instructions" : ["Pour Ingredients Into Mixing Glass", "Stir Until Properly Diluted", "Strain Into Martini Glass", "Garnish With Orange Peel"]
+            },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             {
                 "name" : "Negroni",
                 "glass" : ["Rocks Glass"],
                 "rim" : null,
+                "wine" : null,
                 "liquor" : ["Gin - 1 oz"],
-                "liqeuer" : [
-                    "Campari - 1 oz,",
-                    "Sweet Vermouth - 1 oz"
-                ],
+                "liqeuer" : ["Campari - 1 oz"],
+                "vermouth" : ["Sweet Vermouth - 1 oz"],
                 "mixers" : null,
                 "garnish" : ["Orange Twist"],
                 "section" : "searchDrinks",
                 "photo" : "negroni",
-                "instructions" : ["Pour Ingredients Into Mixing Glass", "Stir Until Properly Diluted","Strain Over Fresh Ice", "Garnish With Orange Or Orange Peel"]
+                "instructions" : ["Pour Ingredients Into Mixing Glass", "Stir Until Properly Diluted", "Strain Over Fresh Ice", "Garnish With Orange Or Orange Peel"]
             },
             {
                 "name" : "Margarita",
                 "glass" : "Margarita Glass",
                 "rim" : "Salt",
+                "wine" : null,
                 "liquor" : ["Tequila - 2 oz"],
                 "liqeuer" : ["Cointreau - .5 oz"],
+                "vermouth" : null,
                 "mixers" : [
                     "Agave - .75 oz",
                     "Lime Juice - 1.5 oz"
