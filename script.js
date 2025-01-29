@@ -109,7 +109,7 @@ function openFullscreen() {
             d3.select("#drinkPhoto").append("img").attr("class", "drink-photo").attr("src", "./images/" + x.photo + ".png")
           } else{
             // d3.select("#drinkPhoto").append("img").attr("class", "drink-photo").attr("src", "./images/noPhoto.png").style("max-width", "40%")
-            d3.select("#drinkPhoto").append("p").text("Please Upload Photo").style("color", "antiquewhite").style("font-size", "3vh").style("margin","2%");
+            d3.select("#drinkPhoto").append("p").text("Please Upload Photo").style("color", "antiquewhite").style("font-size", "3vh").style("margin","3%");
           }
 
           // Recipe Section Div
@@ -235,41 +235,49 @@ function openFullscreen() {
     }); // End of Button Click
 
     
-    /* Search Button */
-    document.addEventListener("input", (e) => {
-      let value = e.target.value;
-  
-      if (value && value.trim().length > 0) {
-          value = value.trim().toLowerCase().replace(/[^\w\s]/gi, ""); // Remove punctuation
-  
-          $("#searchListDiv").empty(); // Clear the current list
-  
-          // Filter and display drinks that match the sanitized search query
-          list.filter(x => x.name.toLowerCase().replace(/[^\w\s]/gi, "").includes(value))
-              .forEach(x => {
-                  d3.select("#searchListDiv")
-                      .append("button")
-                      .text(x.name)
-                      .attr("class", "button drink-buttons")
-                      .attr("id", x.name);
-              });
-  
-      } else {
-          // If the input is empty, repopulate with all drinks
-          $("#searchListDiv").empty();
-          list.map(x => {
-              if (x.section === "searchDrinks") {
-                  d3.select("#searchListDiv")
-                      .append("button")
-                      .text(x.name)
-                      .attr("class", "button drink-buttons")
-                      .attr("id", x.name);
-              }
+/* Search Button */
+document.addEventListener("input", (e) => {
+  let value = e.target.value;
+
+  if (value && value.trim().length > 0) {
+      value = value.trim().toLowerCase().replace(/[^\w\s]/gi, ""); // Remove punctuation
+      $("#searchListDiv").empty(); // Clear the current list
+
+      // Filter drinks based on the sanitized search query
+      let filteredDrinks = list.filter(x => 
+          x.name.toLowerCase().replace(/[^\w\s]/gi, "").includes(value)
+      );
+
+      if (filteredDrinks.length > 0) {
+          filteredDrinks.forEach(x => {
+              d3.select("#searchListDiv")
+                  .append("button")
+                  .text(x.name)
+                  .attr("class", "button drink-buttons")
+                  .attr("id", x.name);
           });
+      } else {
+          // Display an error message if no drinks match the search
+          d3.select("#searchListDiv")
+              .append("p")
+              .text("...No drinks found...")
+              .attr("class", "error-message");
       }
-    });
-  
-  
+  } else {
+      // If input is empty, repopulate with all drinks in the "searchDrinks" section
+      $("#searchListDiv").empty();
+      list.forEach(x => {
+          if (x.section === "searchDrinks") {
+              d3.select("#searchListDiv")
+                  .append("button")
+                  .text(x.name)
+                  .attr("class", "button drink-buttons")
+                  .attr("id", x.name);
+          }
+      });
+  }
+});
+
 
 
 
