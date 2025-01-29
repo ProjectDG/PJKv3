@@ -287,6 +287,7 @@ button{
     width: 96%;
     height: fit-content;
     order: 2;
+    font-size: 2vh;
   }
 
   .drink-recipe{
@@ -295,6 +296,82 @@ button{
 
   .recipe{
     max-width: 100%;
+  }
+
+  #drinkPhoto{
+    height: fit-content;
+    padding: 4% 0;
+    order: 1;
+  }
+
+  .drink-buttons{
+    width: 35vw;
+    height: 18vh;
+    padding: 3%;
+  }
+
+  #searchInput{
+    width: 70%;
+  }
+
+  #clearButton{
+    width: 20vw;
+    height: 5vh;
+    font-size: 2.5vh;
+  }
+
+  .error-message{
+    font-size: 4vh;
+    text-align: center;
+  }
+
+
+
+}
+
+
+@media screen and (max-width: 1440px) and (orientation: portrait) {
+
+  ::backdrop {
+    background-image: url("./images/japan.png");
+    background-size: 199% 115%;
+    display: block;
+  }  
+
+  #drinkRecipeDiv{
+    width: 96%;
+    height: 64.5vh;
+  }
+
+  .info-divs{
+    width: 96%;
+    margin: 1% 0;
+  }
+
+  #drinkInstructionsDiv{
+    width: 96%;
+    height: fit-content;
+    order: 2;
+  }
+
+  .drink-recipe{
+    margin-left: 4%;
+    width: 100%;
+  }
+
+  .recipe-title-div{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .recipe-title{
+    font-size: 2.5vh;
+    width: 100%;
+    text-decoration: underline;
+  }
+
+  .recipe{
+    max-width: 98%;
   }
 
   #drinkPhoto{
