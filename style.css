@@ -223,9 +223,13 @@ button{
   /* text-decoration: underline; */
 }
 
+.drink-recipe{
+  max-width: 100%;
+}
+
 .recipe{
   /* border: 1px solid green; */
-  max-width: 28vw;
+  max-width: 100%;
   margin: 0%;
   margin-bottom: 2%;
   /* font-weight: 600; */
@@ -263,6 +267,12 @@ button{
 
 @media screen and (max-width: 800px) and (orientation: portrait) {
 
+  ::backdrop {
+    background-image: url("./images/japan.png");
+    background-size: 199% 115%;
+    display: block;
+  }  
+
   #drinkRecipeDiv{
     width: 96%;
     height: 64.5vh;
@@ -277,6 +287,14 @@ button{
     width: 96%;
     height: fit-content;
     order: 2;
+  }
+
+  .drink-recipe{
+    width: 75%;
+  }
+
+  .recipe{
+    max-width: 100%;
   }
 
   #drinkPhoto{
@@ -305,7 +323,6 @@ button{
     font-size: 4vh;
     text-align: center;
   }
-
 
 
 
