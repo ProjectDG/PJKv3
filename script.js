@@ -227,6 +227,17 @@ function openFullscreen() {
             })
           }
 
+          if(x.batch !== null){
+            d3.select("#drinkInstructionsDiv").append("div").attr("class", "instructions-title").attr("id", "drinkInstructionsTitle").text("Batch").style("border-top", ".25vh inset rgb(227, 191, 127)");
+            
+            let batch = x.batch;
+
+            console.log(batch);
+            batch.map(l => {
+              d3.select("#drinkInstructionsDiv").append("li").attr("class", "instructions").text(l);
+            })
+          }
+
         }
 
       })
