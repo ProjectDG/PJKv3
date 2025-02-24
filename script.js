@@ -11,16 +11,18 @@ fetch('data.json')
 
 .then(data => {
 
+
+
   var elem = document.getElementsByTagName("BODY")[0];
-function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
+  function openFullscreen() {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+      elem.msRequestFullscreen();
+    }
   }
-}
   
   $(document).ready(function(){
 
@@ -33,6 +35,10 @@ function openFullscreen() {
 
     let list = data[0].drinks;
     // console.log(list);
+
+    let list2 = data[0].ingredients[0].liquor;   // -----------------------------------------------------------------------  To access ingredients in stock
+    // console.log(list2);
+
 
     list.sort((a, b) => a.name.localeCompare(b.name));
 
@@ -50,9 +56,7 @@ function openFullscreen() {
   
 
     $('body').on('click', '.button', function(){
-      if(this.id === "clearButton"){
-        return;
-      }
+
       openFullscreen();
       $("#mainContainer").empty();
 
@@ -157,17 +161,17 @@ function openFullscreen() {
             })
           }
 
-          if(x.liqeuer !== null){
-            d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-div").attr("id", "liqeuerTitle");
-            d3.select("#liqeuerTitle").append("div").attr("class", "recipe-title-div").attr("id", "liqeuer");
-            d3.select("#liqeuer").append("p").attr("class", "recipe-title").text("Liqeuer:");
-            d3.select("#liqeuer").append("div").attr("class", "drink-recipe").attr("id", "liqeuerRecipe");
+          if(x.liqueur !== null){
+            d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-div").attr("id", "liqueurTitle");
+            d3.select("#liqueurTitle").append("div").attr("class", "recipe-title-div").attr("id", "liqueur");
+            d3.select("#liqueur").append("p").attr("class", "recipe-title").text("liqueur:");
+            d3.select("#liqueur").append("div").attr("class", "drink-recipe").attr("id", "liqueurRecipe");
 
 
-            let liqeuers = x.liqeuer;
-            console.log(liqeuers);
-            liqeuers.map(l => {
-              d3.select("#liqeuerRecipe").append("p").attr("class", "recipe").text(l);
+            let liqueurs = x.liqueur;
+            console.log(liqueurs);
+            liqueurs.map(l => {
+              d3.select("#liqueurRecipe").append("p").attr("class", "recipe").text(l);
             })
           }
 
@@ -234,6 +238,17 @@ function openFullscreen() {
 
             console.log(batch);
             batch.map(l => {
+              d3.select("#drinkInstructionsDiv").append("li").attr("class", "instructions").text(l);
+            })
+          }
+
+          if(x.altBatch !== null){
+            d3.select("#drinkInstructionsDiv").append("div").attr("class", "instructions-title").attr("id", "drinkInstructionsTitle").text("Batch").style("border-top", ".25vh inset rgb(227, 191, 127)");
+            
+            let altBatch = x.altBatch;
+
+            console.log(altBatch);
+            altBatch.map(l => {
               d3.select("#drinkInstructionsDiv").append("li").attr("class", "instructions").text(l);
             })
           }
@@ -308,6 +323,22 @@ document.addEventListener("input", (e) => {
     });  // End of Clear Button
 
     
+
+
+
+
+    list.map(x => {
+      console.log(x.liquor);
+    })
+
+    list.map(x => {
+      console.log(x.liqueur);
+    })
+
+    list.map(x => {
+      console.log(x.mixers);
+    })
+
 
 
 

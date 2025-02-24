@@ -17,13 +17,14 @@ body{
     flex-wrap: wrap;
     font-family: 'Courier New', Courier, monospace;
     background-image: url(./images/japan.png);
+    background-color: rgb(58, 23, 31);
     color: antiquewhite;
 }
 
 ::backdrop {
   background-image: url("./images/japan.png");
   background-size: 105% 100%;
-  display: block;
+  /* display: block; */
 }  
 
 button{
@@ -192,7 +193,7 @@ button{
 #drinkRecipeDiv{
   /* border: 3px solid pink; */
   width: 45%;
-  font-size: 2.25vh;
+  font-size: 2.5vh;
   display: flex;
   text-align: center;
   flex-wrap: wrap;
@@ -427,7 +428,7 @@ button{
 
   ::backdrop {
     background-image: url("./images/japan.png");
-    background-size: 100% 100%;
+    background-size: 120% 100%;
     display: block;
   } 
 }
