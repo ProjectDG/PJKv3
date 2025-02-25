@@ -317,9 +317,25 @@
                 "photo" : null,
                 "instructions" : ["Pour Into Cambro", "Stir Until Thoroughly Mixed", "Refridgerate for 24 Hours"],
                 "batch" : ["White Rum - 1 Cup", "Dry Curacao - 1/2 Cup", "Lime Juice - 3/4 Cup,", "Milk - 2 Cups", "Orgeat - 1/2 Cup"],
-                "altBatch" : ["Egg White - 2", "Passion Fruit Liqueur - 5 oz", "Cherry Liqueur - 5 oz", "Lime Juice - 5 oz"]
+                "altBatch" : ["Egg White - 2", "Passion Fruit Liqueur - 5 oz", "Cherry Liqueur - 5 oz", "Lime Juice - 5 oz", "Shake Vigorously in Foam Canister", "Let Sit for 25 minutes"]
             },
-
+            {
+                "name" : "Open Sesame",
+                "glass" : "Rocks Glass",
+                "rim" : null,
+                "wine" : null,
+                "liquor" : ["Sesame Gin - 1 oz,", "St. George Terrior - 1 oz"],
+                "liqueur" : ["Domain De Canton - .5 oz,", "Dry Curacao - .25 oz,"],
+                "vermouth" : ["Lillet Blanc - .25 oz"],
+                "mixers" : ["Lemon Bitters - 3 Dashes"],
+                "garnish" : ["Flashed Orange Peel"],
+                "section" : "originals",
+                "photo" : null,
+                "instructions" : ["Pour Ingredients Into Mixing Glass", "Stir Until Properly Diluted", "Strain Over Big Rock", "Garnish with Flashed Orange Peel"],
+                "batch" : null,
+                "altBatch" : null
+            },
+            
 
 
 
