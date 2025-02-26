@@ -149,7 +149,7 @@
                 "garnish" : ["Shiso Leaf"],
                 "section" : "cocktails",
                 "photo" : null,
-                "instructions" : ["Pour Into Shaker", "Add Ice & Shake Vigorously", "Double Strain Into Coupe Glass", "Garnish With Shiso Leaf"],
+                "instructions" : ["Pour Into Shaker", "Add Ice & Shake Vigorously", "Double Strain Into Coupe Glass & Top with Club Soda", "Garnish With Shiso Leaf"],
                 "batch" : null,
                 "altBatch" : null
             },
@@ -325,7 +325,7 @@
                 "rim" : null,
                 "wine" : null,
                 "liquor" : ["Sesame Gin - 1 oz,", "St. George Terrior - 1 oz"],
-                "liqueur" : ["Domain De Canton - .5 oz,", "Dry Curacao - .25 oz,"],
+                "liqueur" : ["Domain De Canton - .5 oz,", "Dry Curacao - .25 oz"],
                 "vermouth" : ["Lillet Blanc - .25 oz"],
                 "mixers" : ["Lemon Bitters - 3 Dashes"],
                 "garnish" : ["Flashed Orange Peel"],
@@ -335,7 +335,86 @@
                 "batch" : null,
                 "altBatch" : null
             },
-            
+            {
+                "name" : "Rose Colored Glasses",
+                "glass" : "Coupe Glass",
+                "rim" : null,
+                "wine" : null,
+                "liquor" : ["Rose Bud Infused Vodka - 1.5 oz"],
+                "liqueur" : ["Campari - .25 oz,", "Cointreau - .75 oz"],
+                "vermouth" : null,
+                "mixers" : ["Lemon Juice - 1 oz,", "Simple Syrup - .5 oz"],
+                "garnish" : ["Gold Dust & Dehydrated Rose Bud"],
+                "section" : "originals",
+                "photo" : null,
+                "instructions" : ["Pour Into Shaker", "Add Ice & Shake Vigorously", "Double Strain Into Coupe Glass", "Garnish With Dehydrated Rose Bud & Gold Dust"],
+                "batch" : ["Honey / Fig Foam Batch Coming Soon..."],
+                "altBatch" : null
+            },
+            {
+                "name" : "Sake Sangria",
+                "glass" : "Wine Glass",
+                "rim" : null,
+                "wine" : ["Living Jewel Sake - 2 oz"],
+                "liquor" : null,
+                "liqueur" : ["Domain De Canton - .5 oz,", "Chambord - .25 oz,", "Dry Curacao - .25 oz"],
+                "vermouth" : null,
+                "mixers" : ["Pineapple Juice - .75 oz,", "Pomegranate Juice - .75 oz,", "Lemon Juice - .5 oz"],
+                "garnish" : ["Pineapple Frond & Dehydrated Orange"],
+                "section" : "originals",
+                "photo" : null,
+                "instructions" : ["Pour Into Shaker", "Add Ice & Shake Vigorously", "Dirty Dump Into Wine Glass & Top with Club Soda", "Garnish With Dehydrated Orange & Pineapple Frond"],
+                "batch" : null,
+                "altBatch" : null
+            },
+            {
+                "name" : "Shanghai Street Fight",
+                "glass" : "Rocks Glass",
+                "rim" : null,
+                "wine" : null,
+                "liquor" : ["Rittenhouse Rye Whiskey - 2 oz"],
+                "liqueur" : ["Aperol - .5 oz,", "Fernet Branca - .5 oz"],
+                "vermouth" : null,
+                "mixers" : ["Angostura Bitters - 1 Dash"],
+                "garnish" : ["Orange Peel"],
+                "section" : "originals",
+                "photo" : null,
+                "instructions" : ["Pour Ingredients Into Mixing Glass", "Stir Until Properly Diluted", "Strain Over Big Rock", "Garnish With Orange Peel"],
+                "batch" : null,
+                "altBatch" : null
+            },
+            {
+                "name" : "Snow On Fuji",
+                "glass" : "Coupe Glass",
+                "rim" : null,
+                "wine" : ["Topped with Albert Bichot Brut"],
+                "liquor" : ["Fuji Apple Infused Gin - 2 oz"],
+                "liqueur" : null,
+                "vermouth" : null,
+                "mixers" : ["Lemon Juice - 1 oz,", "Lychee Syrup - .75 oz"],
+                "garnish" : ["Lychee & Mint Sprig"],
+                "section" : "originals",
+                "photo" : null,
+                "instructions" : ["Pour Into Shaker", "Add Ice & Shake Vigorously", "Double Strain Into Coupe Glass & Top with Brut", "Garnish With Lychee & Mint Sprig"],
+                "batch" : ["Blend 2 Fuji Apples with Gin of Choice", "Let Sit for 24 to 48 Hours", "Strain & Prepare for Service"],
+                "altBatch" : null
+            },
+            {
+                "name" : "That Yuzu, That You Do",
+                "glass" : "Rocks Glass",
+                "rim" : ["Salt"],
+                "wine" : null,
+                "liquor" : ["Corazon Blanco - 2 oz"],
+                "liqueur" : ["Grand Marnier - .5 oz"],
+                "vermouth" : null,
+                "mixers" : ["Lime Juice - .75 oz,", "Yuzu - .25 oz,", "Agave - .25 oz"],
+                "garnish" : ["Dehydrated Lime"],
+                "section" : "originals",
+                "photo" : null,
+                "instructions" : ["Pour Into Shaker", "Add Ice & Shake Vigorously", "Strain Over Fresh Ice", "Garnish With Dehydrated Lime"],
+                "batch" : null,
+                "altBatch" : null
+            },
 
 
 
@@ -392,22 +471,39 @@
             {
                 "name" : "Margarita",
                 "glass" : "Margarita Glass",
-                "rim" : "Salt",
+                "rim" : ["Salt"],
                 "wine" : null,
                 "liquor" : ["Tequila - 2 oz"],
                 "liqueur" : ["Cointreau - .5 oz"],
                 "vermouth" : null,
-                "mixers" : [
-                    "Agave - .75 oz",
-                    "Lime Juice - 1.5 oz"
-                ],
+                "mixers" : ["Agave - .75 oz", "Lime Juice - 1.5 oz"],
                 "garnish" : ["Lime"],
                 "section" : "searchDrinks",
                 "photo" : "cadillac",
                 "instructions" : ["Pour Into Shaker", "Add Ice & Shake Vigorously" ,"Strain Over Fresh Ice", "Garnish With Lime"],
                 "batch" : null,
                 "altBatch" : null
+            },
+            {
+                "name" : "Aperol Spritz",
+                "glass" : "Wine Glass",
+                "rim" : null,
+                "wine" : ["Dry Proseco - 3 oz"],
+                "liquor" : null,
+                "liqueur" : ["Aperol - 2 oz"],
+                "vermouth" : null,
+                "mixers" : ["Club Soda"],
+                "garnish" : ["Orang Wheel"],
+                "section" : "searchDrinks",
+                "photo" : "aperolSpritz",
+                "instructions" : ["Build In Glass", "Garnish with Orange Wheel"],
+                "batch" : null,
+                "altBatch" : null
             }
+
+
+
+
         ],
 
 
