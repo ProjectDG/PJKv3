@@ -45,7 +45,7 @@ button{
 
 .drink-buttons{
   border: .5vh outset rgb(227, 191, 127);
-  padding: 3%;
+  padding: 2%;
   width: 16vw;
   height: 25vh;
   border-radius: 20%;
@@ -124,6 +124,7 @@ button{
   align-items: center;
   width: 95%;
   height: 60%;
+  overflow: auto;
 }
 
 .error-message{
