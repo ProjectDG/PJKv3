@@ -31,6 +31,7 @@ button{
   border: .5vh outset rgb(227, 191, 127);
   box-shadow: 0 0 15px #313131;
   background-color: rgba(112, 73, 11, 0.907);
+  background-image: linear-gradient(rgba(200, 131, 21, 0.571), rgba(34, 22, 4, 0.116));
   margin: 1%;
   width: 45vw;
   height: 9vh;
@@ -41,6 +42,7 @@ button{
 
 .nav-buttons{
   background-color: rgba(54, 45, 31, 0.809);
+  border-radius: 30px;
 }
 
 .drink-buttons{
@@ -194,7 +196,7 @@ button{
 #drinkRecipeDiv{
   /* border: 3px solid pink; */
   width: 45%;
-  font-size: 2.25vh;
+  font-size: 2.5vh;
   display: flex;
   text-align: center;
   flex-wrap: wrap;
