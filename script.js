@@ -327,17 +327,17 @@ document.addEventListener("input", (e) => {
 
 
 
-    list.map(x => {
-      console.log(x.liquor);
-    })
+    // list.map(x => {
+    //   console.log(x.liquor);
+    // })
 
-    list.map(x => {
-      console.log(x.liqueur);
-    })
+    // list.map(x => {
+    //   console.log(x.liqueur);
+    // })
 
-    list.map(x => {
-      console.log(x.mixers);
-    })
+    // list.map(x => {
+    //   console.log(x.mixers);
+    // })
 
 
 

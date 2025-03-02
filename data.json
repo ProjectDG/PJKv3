@@ -493,11 +493,11 @@
                 "liquor" : null,
                 "liqueur" : ["St-Germain - 2 oz"],
                 "vermouth" : null,
-                "mixers" : ["Club Soda - 1 oz,", "Mint Sprig"],
-                "garnish" : ["Mint Sprig & Lemon Wheel"],
+                "mixers" : ["Club Soda - 1 oz,", "Mint Sprig (Muddled)"],
+                "garnish" : ["Mint Sprig & Lime Wheel"],
                 "section" : "searchDrinks",
                 "photo" : "hugoSpritz",
-                "instructions" : ["Add the St. Germain and mint sprig into a wine glass", "Gently muddle", "Add ice, the prosecco and the soda water and stir briefly", "Gently to combine", "Garnish with a mint sprig and a lemon wheel."],
+                "instructions" : ["Add the St. Germain and mint sprig into a wine glass", "Gently muddle", "Add ice, the prosecco and the soda water and stir briefly", "Gently to combine", "Garnish with a mint sprig and a lime wheel."],
                 "batch" : null,
                 "altBatch" : null
             },
@@ -564,8 +564,23 @@
                 "instructions" : ["Pour Into Shaker", "Add Ice & Shake Vigorously" ,"Strain Into Nick & Nora Glass", "Garnish With Orange Peel"],
                 "batch" : null,
                 "altBatch" : null
+            },
+            {
+                "name" : "Siesta",
+                "glass" : "Coupe Glass",
+                "rim" : null,
+                "wine" : null,
+                "liquor" : ["Tequila (Blanco) - 2 oz"],
+                "liqueur" : ["Campari - .5 oz"],
+                "vermouth" : null,
+                "mixers" : ["Lime Juice - .75 oz,", "Grapefruit Juice - .5 oz,", "Agave - .5 oz"],
+                "garnish" : ["Lime, Lemon or Grapefruit Wheel"],
+                "section" : "searchDrinks",
+                "photo" : "siesta",
+                "instructions" : ["Pour Into Shaker", "Add Ice & Shake Vigorously" ,"Double Strain Into Coupe Glass", "Garnish With Lime, Lemon or Grapefruit Wheel"],
+                "batch" : null,
+                "altBatch" : null
             }
-
 
 
 
