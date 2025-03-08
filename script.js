@@ -36,11 +36,11 @@ fetch('data.json')
     let list = data[0].drinks;
     // console.log(list);
 
-    let list2 = data[0].ingredients[0].liquor;   // -----------------------------------------------------------------------  To access ingredients in stock
+    let list2 = data[0].ingredients[0].liquor;   // -----------------------------------------------------------------------  To access ingredients in stock but this is only specific to liquor
     // console.log(list2);
 
 
-    list.sort((a, b) => a.name.localeCompare(b.name));
+    // list.sort((a, b) => a.name.localeCompare(b.name));       //  What does this do.............???????????????????????
 
     list.map(x => {
       // console.log(x);
@@ -131,7 +131,7 @@ fetch('data.json')
             d3.select("#rim").append("p").attr("class", "recipe-title").text("Rim:");
             d3.select("#rim").append("div").attr("class", "drink-recipe").attr("id", "rimRecipe");
             d3.select("#rimRecipe").append("p").attr("class", "recipe").text(x.rim);
-          }
+          }8
 
           if(x.wine !== null){
             d3.select("#drinkRecipeDiv").append("div").attr("class", "recipe-div").attr("id", "wineTitle");
@@ -157,7 +157,7 @@ fetch('data.json')
             let liquors = x.liquor;
             console.log(liquors);
             liquors.map(l => {
-              d3.select("#liquorRecipe").append("p").attr("class", "recipe").text(l);
+              d3.select("#liquorRecipe").append("p").attr("id", l).attr("class", "recipe").text(l);          //Added id to this p element but may want tto rethink how to select it
             })
           }
 
@@ -322,6 +322,42 @@ document.addEventListener("input", (e) => {
 
     });  // End of Clear Button
 
+
+
+
+    $('body').on('click', 'p', function(){
+
+      let thisID = this.id.toLowerCase();
+      
+      list2.map(x =>{
+        let a = thisID.replace(/[^a-zA-Z]|oz|float|\d/gi, ' ');
+        let b = x.toLowerCase();
+
+        function toCamelCase(str) {
+          return str.toLowerCase().split(' ').map(function(word, index) {
+            return index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1);
+          }).join('');
+        }
+        
+        const camelCaseStringA = toCamelCase(a);
+        const camelCaseStringB = toCamelCase(b);
+
+        if(camelCaseStringA === camelCaseStringB){
+          console.log(camelCaseStringA);
+          console.log(camelCaseStringB);
+
+
+          d3.select("body").append("div").attr("id", "modalBG");
+          d3.select("#modalBG").append("div").attr("id", "modalContent");
+          d3.select("#modalContent").append("img").attr("class", "inventory-photo").attr("src", "./images/" + camelCaseStringA + ".png")
+        }
+      })
+    });  // End of "p"  click
+
+
+    $('body').on('click', '#modalBG', function(){
+      $("#modalBG").remove();
+    });
     
 
 
