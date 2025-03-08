@@ -171,7 +171,7 @@ fetch('data.json')
             let liqueurs = x.liqueur;
             console.log(liqueurs);
             liqueurs.map(l => {
-              d3.select("#liqueurRecipe").append("p").attr("class", "recipe").text(l);
+              d3.select("#liqueurRecipe").append("p").attr("id", l).attr("class", "recipe").text(l);
             })
           }
 
@@ -328,10 +328,11 @@ document.addEventListener("input", (e) => {
     $('body').on('click', 'p', function(){
 
       let thisID = this.id.toLowerCase();
+      // console.log(thisID);
       
       list2.map(x =>{
         let a = thisID.replace(/[^a-zA-Z]|oz|float|\d/gi, ' ');
-        let b = x.toLowerCase();
+        let b = x.toLowerCase().replace(/[^a-zA-Z]|oz|float|\d/gi, ' ');
 
         function toCamelCase(str) {
           return str.toLowerCase().split(' ').map(function(word, index) {
@@ -341,6 +342,9 @@ document.addEventListener("input", (e) => {
         
         const camelCaseStringA = toCamelCase(a);
         const camelCaseStringB = toCamelCase(b);
+
+        console.log(camelCaseStringA);
+          console.log(camelCaseStringB);
 
         if(camelCaseStringA === camelCaseStringB){
           console.log(camelCaseStringA);

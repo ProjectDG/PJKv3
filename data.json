@@ -46,7 +46,7 @@
                 "section" : "cocktails",
                 "photo" : null,
                 "instructions" : ["Pour Into Shaker", "Dry Shake", "Add Ice & Shake Vigorously" , "Double Strain Over Big Rock", "Let Settle", "Float with Butterfly Pea / Honeysuckle Gin", "Garnish With Flower"],
-                "batch" : null,
+                "batch" : ["Coming Soon..."],
                 "altBatch" : null
             },
             {
@@ -56,7 +56,7 @@
                 "wine" : null,
                 "liquor" : [
                     "Dos Hombres Mezcal - 1.5 oz,",
-                    "Butterfly Pea Gin - .25 oz (Float)" 
+                    "Butterfly Pea Gin - .25 oz" 
                 ],
                 "liqueur" : ["Chinola Passion Fruit - .5 oz"],
                 "vermouth" : null,
@@ -603,18 +603,21 @@
                 "liquor": [
 
                     "Butterfly Pea Gin",
+                    "Chinola Passion Fruit",
+                    "Coconut Rum",
                     "Dos Hombres Mezcal",
+                    "Gin or Vodka",
+                    "Los Vecinos Mezcal",
+                    "Rittenhouse Rye",
+                    "Rivi Gin",
+                    "St. Germain",
+                    "Wheatly Vodka",
 
 
-                    "vodka",
                     "rum",
-                    "gin",
                     "whiskey",
                     "scotch",
                     "triple sec",
-                    "wheatly",
-                    "rivi",
-                    "rittenhouse",
                     "corazon"
                 ]
             }

@@ -244,6 +244,7 @@ button{
   /* font-weight: 600; */
   display: block;
   text-align: left;
+  cursor: pointer;
 }
 
 #drinkInstructionsDiv{
