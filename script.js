@@ -143,7 +143,7 @@ fetch('data.json')
             let wine = x.wine;
             console.log(wine);
             wine.map(l => {
-              d3.select("#wineRecipe").append("p").attr("class", "recipe").text(l);
+              d3.select("#wineRecipe").append("p").attr("id", l).attr("class", "recipe").text(l);
             })
           }
 
@@ -185,7 +185,7 @@ fetch('data.json')
             let vermouth = x.vermouth;
             console.log(vermouth);
             vermouth.map(l => {
-              d3.select("#vermouthRecipe").append("p").attr("class", "recipe").text(l);
+              d3.select("#vermouthRecipe").append("p").attr("id", l).attr("class", "recipe").text(l);
             })
           }
 
@@ -199,7 +199,7 @@ fetch('data.json')
             let mixers = x.mixers;
             console.log(mixers);
             mixers.map(l => {
-              d3.select("#mixersRecipe").append("p").attr("class", "recipe").text(l);
+              d3.select("#mixersRecipe").append("p").attr("id", l).attr("class", "recipe").text(l);
             })
           }
 
@@ -213,7 +213,7 @@ fetch('data.json')
             let garnish = x.garnish;
             console.log(garnish);
             garnish.map(l => {
-              d3.select("#garnishRecipe").append("p").attr("class", "recipe").text(l);
+              d3.select("#garnishRecipe").append("p").attr("id", l).attr("class", "recipe").text(l);
             })
           }
          
@@ -331,8 +331,8 @@ document.addEventListener("input", (e) => {
       // console.log(thisID);
       
       list2.map(x =>{
-        let a = thisID.replace(/[^a-zA-Z]|oz|float|\d/gi, ' ');
-        let b = x.toLowerCase().replace(/[^a-zA-Z]|oz|float|\d/gi, ' ');
+        let a = thisID.replace(/[^a-zA-Z]|oz|float|dashes|\d/gi, ' ');
+        let b = x.toLowerCase().replace(/[^a-zA-Z]|oz|float|dashes|\d/gi, ' ');
 
         function toCamelCase(str) {
           return str.toLowerCase().split(' ').map(function(word, index) {
@@ -347,8 +347,8 @@ document.addEventListener("input", (e) => {
           console.log(camelCaseStringB);
 
         if(camelCaseStringA === camelCaseStringB){
-          console.log(camelCaseStringA);
-          console.log(camelCaseStringB);
+          // console.log(camelCaseStringA);
+          // console.log(camelCaseStringB);
 
 
           d3.select("body").append("div").attr("id", "modalBG");
