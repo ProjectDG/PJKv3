@@ -160,7 +160,7 @@
                 "wine" : null,
                 "liquor" : ["Wheatly Vodka - 2 oz"],
                 "liqueur" : [
-                    "Borghettis Espresso - .75 oz,",
+                    "Cafe Borghetti - .75 oz,",
                     "Montenegro - .25 oz"
                 ],
                 "vermouth" : null,
@@ -189,7 +189,7 @@
                     "Mango Puree - 1 oz,",
                     "Pineapple Juice - .75 oz"
                 ],
-                "garnish" : ["Pineapple Frond & Dehydrated Chile De Arbol"],
+                "garnish" : ["Pineapple Frond &", "Dehydrated Chile De Arbol"],
                 "section" : "cocktails",
                 "photo" : null,
                 "instructions" : ["Pour Into Shaker", "Add Ice & Shake Vigorously", "Strain Over Fresh Ice", "Garnish With Pineapple Frond & Dehydrated Chile De Arbol"],
@@ -617,6 +617,7 @@
                     "Wheatly Vodka",
 
 
+                    "Cafe Borghetti",
                     "Chinola Passion Fruit",
                     "Luxardo Cherry Liqueur",
                     "St. Germain",
@@ -626,6 +627,7 @@
                     "Living Jewel Sake",
 
 
+                    "Montenegro",
 
 
                     "rum",
