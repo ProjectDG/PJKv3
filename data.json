@@ -597,10 +597,10 @@
 
 
 
-        "ingredients" : 
+        "inventory" : 
         [
             {
-                "liquor": [
+                "items": [
 
                     "Angostura Bitters",
                     "Orange Bitters",

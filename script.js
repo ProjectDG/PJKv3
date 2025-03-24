@@ -26,6 +26,12 @@ fetch('data.json')
   
   $(document).ready(function(){
 
+    function toCamelCase(str) {
+      return str.toLowerCase().split(' ').map(function(word, index) {
+        return index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1);
+      }).join('');
+    }
+
     d3.select("body").append("div").attr("id", "topNav");
     d3.select("#topNav").append("button").text("Cocktails").attr("class", "button nav-buttons").attr("id", "cocktails");
     d3.select("#topNav").append("button").text("Originals").attr("class", "button nav-buttons").attr("id", "originals");
@@ -36,17 +42,76 @@ fetch('data.json')
     let list = data[0].drinks;
     // console.log(list);
 
-    let list2 = data[0].ingredients[0].liquor;   // -----------------------------------------------------------------------  To access ingredients in stock but this is only specific to liquor
+    let list2 = data[0].inventory[0].items;   // -----------------------------------------------------------------------  To access ingredients in stock but this is only specific to liquor
     // console.log(list2);
 
 
     // list.sort((a, b) => a.name.localeCompare(b.name));       //  What does this do.............???????????????????????
 
+
+
     list.map(x => {
-      // console.log(x);
+
+      // console.log(Object.keys(x));
+      let keys = Object.keys(x);
+      let subSet = "";
+
+      keys.map(l => {
+        if(l === "name" || l === "photo" || l === "section" || l === "batch" || l === "altBatch" || l === "instructions"){
+          return
+        }
+        subSet = "x." + l;
+        // console.log("x." + l);
+      })
+
+  
+      // let wine = x.wine;
+      // console.log(wine);                             //         This may be the key to consolidating your code.... freecodecamps rpg tutorial is helping. use variables better to store values that can change depending on needs!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ 
+      // function missingIngBtn(){
+      //   function isSubset(arr1, arr2){
+      //     return arr1.every(item => arr2.includes(item));
+      //   }
+        
+      //   let liquorArr = [];
+
+      //   if(x.liquor !== null){                                        // missing liquor
+      //     x.liquor.map(x => {
+      //       // console.log(x)
+      //       let a = x.replace(/[^a-zA-Z]|oz|float|dashes|\d/gi, ' ');
+      //       // console.log(a);
+      //       let b = a.trim();
+      //       liquorArr.push(b);
+      //     })
+      //   }
+
+        
+        
+
+      //   if (liquorArr.length !== 0) {
+      //     let result = isSubset(liquorArr, list2);
+      //     let button = d3.select("#mainContainer")
+      //       .append("button")
+      //       .text(x.name)
+      //       .attr("class", "button drink-buttons")
+      //       .attr("id", x.name);
+        
+      //     if (result !== true) {
+      //       button.text(x.name).append("p").text("( Missing Ingredient )").attr("class", "missing-ingredient");
+      //     }
+      //   }
+
+      //   if(x.liquor === null){
+      //     d3.select("#mainContainer").append("button").text(x.name).attr("class", "button drink-buttons").attr("id", x.name);
+      //   };
+
+      // }
+
+
 
       if(x.section === "cocktails"){
-        d3.select("#mainContainer").append("button").text(x.name).attr("class", "button drink-buttons").attr("id", x.name);
+        d3.select("#mainContainer").append("button").text(x.name).attr("class", "button drink-buttons").attr("id", x.name);             // Just this if it stops working
+        // missingIngBtn()
       }
     })
 
@@ -63,7 +128,7 @@ fetch('data.json')
       // console.log(this.id);
 
       if(this.id === "clearButton"){
-        return;
+        return;  // Because the clear button function is located somewhere else
       }
       
 
@@ -90,6 +155,7 @@ fetch('data.json')
    
         
 
+        // Recipe Information ..............................................................................................................................
         if(this.id === x.name){
           // console.log(x.name);
           // console.log(x.photo);
@@ -261,7 +327,7 @@ fetch('data.json')
     }); // End of Button Click
 
     
-/* Search Button */
+/* Search Input */
 document.addEventListener("input", (e) => {
   let value = e.target.value;
 
@@ -333,23 +399,16 @@ document.addEventListener("input", (e) => {
       list2.map(x =>{
         let a = thisID.replace(/[^a-zA-Z]|oz|float|dashes|\d/gi, ' ');
         let b = x.toLowerCase().replace(/[^a-zA-Z]|oz|float|dashes|\d/gi, ' ');
-
-        function toCamelCase(str) {
-          return str.toLowerCase().split(' ').map(function(word, index) {
-            return index === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1);
-          }).join('');
-        }
         
         const camelCaseStringA = toCamelCase(a);
         const camelCaseStringB = toCamelCase(b);
 
         console.log(camelCaseStringA);
-          console.log(camelCaseStringB);
+        console.log(camelCaseStringB);
 
         if(camelCaseStringA === camelCaseStringB){
           // console.log(camelCaseStringA);
           // console.log(camelCaseStringB);
-
 
           d3.select("body").append("div").attr("id", "modalBG");
           d3.select("#modalBG").append("div").attr("id", "modalContent");
@@ -370,6 +429,7 @@ document.addEventListener("input", (e) => {
     // list.map(x => {
     //   console.log(x.liquor);
     // })
+    
 
     // list.map(x => {
     //   console.log(x.liqueur);
@@ -378,9 +438,6 @@ document.addEventListener("input", (e) => {
     // list.map(x => {
     //   console.log(x.mixers);
     // })
-
-
-
 
 
   }); // End of jQuery
