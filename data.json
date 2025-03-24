@@ -142,7 +142,7 @@
                 "liqueur" : ["St. Germain - 1 oz"],
                 "vermouth" : null,
                 "mixers" : [
-                    "Shiso Leaf - 1 ea,",
+                    "Shiso Leaf - 1,",
                     "Lemon Juice - 1 oz,",
                     "Simple Syrup - .5 oz"
                 ],
@@ -208,7 +208,7 @@
                     "Lime Juice - 1 oz,",
                     "Matcha Syrup - 1 oz,",
                     "Pineapple Juice - .25 oz,",
-                    "Shiso Leaf - 1 ea,",
+                    "Shiso Leaf - 1,",
                     "Soda Water (Topped)"
                 ],
                 "garnish" : ["Flower"],
@@ -597,10 +597,10 @@
 
 
 
-        "ingredients" : 
+        "inventory" : 
         [
             {
-                "liquor": [
+                "items": [
 
                     "Angostura Bitters",
                     "Orange Bitters",
