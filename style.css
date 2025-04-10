@@ -38,6 +38,7 @@ button{
   font-size: 3vh;
   cursor: pointer;
   color: antiquewhite;
+  position: relative;
 }
 
 .nav-buttons{
@@ -51,6 +52,21 @@ button{
   width: 16vw;
   height: 25vh;
   border-radius: 20%;
+}
+
+.missing-ingredient{
+  font-size: 2vh;
+  background-color: rgba(255, 0, 0, 0.9);
+  padding: 1vh;
+  position: absolute;
+  top: 150px;
+  right: 15px;
+  height: 3vh;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
 }
 
 #cocktails,
@@ -150,11 +166,14 @@ button{
   background-color: #0000006e;
   text-shadow: 0 0 15px #000000;
   width: 98%;
-  height: fit-content;
-  padding: 1%;
+  height: 10vh;
+  padding: 0 2%;
   text-align: center;
   font-size: 3vh;
   font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #drinkInfo{
@@ -259,6 +278,7 @@ button{
 
 #drinkInstructionsTitle{
   border-bottom: .25vh inset rgb(227, 191, 127);
+  border-top: .25vh inset rgb(227, 191, 127);
   width: 100%;
   height: fit-content;
   padding: 1vh 0;
@@ -347,7 +367,7 @@ button{
     width: 44vw;
     height: 13vh;
     padding: 3%;
-    border-radius: 5%;
+    border-radius: 70px;
   }
 
   #searchInput{
@@ -429,7 +449,7 @@ button{
     width: 44vw;
     height: 13vh;
     padding: 3%;
-    border-radius: 5%;
+    border-radius: 70px;
   }
 
   #searchInput{
